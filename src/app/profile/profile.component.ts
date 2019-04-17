@@ -10,8 +10,8 @@ import { EmployeeService } from '../employee.service';
 })
 export class ProfileComponent implements OnInit {
 
-  private empId;
-  private emplData:any;
+  public  empId;
+  public emplData:any;
   constructor(private route:ActivatedRoute,private empService:EmployeeService) {
 
     
