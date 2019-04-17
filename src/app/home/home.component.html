@@ -1,0 +1,60 @@
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+<input type="button" value="Display Employees" (click)="fetchEmployees()">
+
+<form [formGroup]="searchForm">
+    <label for="search">Search Employee</label>
+    <br />
+    <input formControlName="search" id="search" />
+    </form>
+
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="12"
+  [collectionSize]="employees.length" (pageChange)="loadPage($event)" [rotate]="true"></ngb-pagination>
+
+    
+
+  
+
+<div class="container-fluid">
+  <h2>Eidiko Employee List</h2>
+  
+  <div class="card-deck">
+  <div class="row" >
+ 
+
+    <div class="col-sm-2 customVikas" *ngFor="let emp of dipEmp" >
+    
+    <div class="card" style="width: 15rem;height: 33rem;" *ngIf="emp!=null" >
+  
+  <img class="card-img-top" [src]="imgSrc" alt="Card image" style="width:100%">
+  <input type="file" accept="image/*" #file hidden (change)="readURL($event);">
+<button (click)="file.click()">Change Picture</button>
+  <div class="card-body">
+      <h4 class="card-title">{{emp.employeeName}}</h4>
+      <h5 class="card-title">{{emp.employeeId}}</h5>
+      <p class="card-text"> {{emp.employeeName}} is an software engineer</p>
+      
+      <nav><a href="#" class="btn btn-primary" routerLink="/profile/{{emp.employeeId}}" >See Profile</a></nav>
+    </div>
+   
+  </div>
+    
+    </div>
+    
+
+            
+        </div>
+          
+          </div>
+    </div>
+
+
+    
+
+
+
+
+
+    

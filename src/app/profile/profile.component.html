@@ -1,0 +1,27 @@
+
+
+
+
+<div class="card flex-row flex-wrap">
+    <div class="card-header border-0">
+        <img src="assets/img_avatar.png" alt="DP" width="150 px" height="150px">
+    </div>
+    <div class="card-block px-2" *ngIf="emplData!=null">
+        <h4 class="card-title">{{emplData.employeeName}}</h4>
+        <p class="card-text">
+            Employee Id :{{empId}}<br>
+          DOJ :{{emplData.doj}} <br>
+          Email  :{{emplData.email}}
+          </p>
+        <p class="card-body">
+            {{emplData.employeeName}} is a Software engineer at eidiko .
+
+        </p>
+    </div>
+    <div class="w-100"></div>
+    
+
+
+</div>
+
+<app-attendence empId="{{empId}}"></app-attendence>
